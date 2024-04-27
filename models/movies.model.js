@@ -1,11 +1,15 @@
+const { Collection } = require("mongoose");
+
 module.exports = mongoose => {
   var schema = mongoose.Schema(
     {
       name: String,
-      course: String,
-      registered: Boolean,
+      title: String,
+      distribution: String,
+      value: String,
+      
     },
-    { timestamps: true }
+    { timestamps: true , Collection: 'films'}
   );
 
   schema.method("toJSON", function () {
@@ -14,6 +18,6 @@ module.exports = mongoose => {
     return object;
   });
 
-  const Student = mongoose.model("student", schema);
+  const Student = mongoose.model("films", schema);
   return Student;
 };
