@@ -4,7 +4,7 @@ const FILMS = db.films;
 
 // Récupérer tous les films depuis la base de données.
 exports.findAllMovies = (req, res) => {
-  Films.find()
+  FILMS.find()
     .then(data => {
       res.status(200).json(data);
     })
